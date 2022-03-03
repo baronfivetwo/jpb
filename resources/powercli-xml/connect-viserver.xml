@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.VimAutomation.ViCore.Impl.V1.VIServerImpl">
+    <Property Name="IsConnected" Type="System.Boolean">True</Property>
+    <Property Name="Id" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/</Property>
+    <Property Name="ServiceUri" Type="System.Uri">https://192.168.86.204/sdk</Property>
+    <Property Name="SessionSecret" Type="System.String">"7e0392e8415e8db0292d7943273c99e89f517173"</Property>
+    <Property Name="Name" Type="System.String">192.168.86.204</Property>
+    <Property Name="Port" Type="System.Int32">443</Property>
+    <Property Name="SessionId" Type="System.String">"7e0392e8415e8db0292d7943273c99e89f517173"</Property>
+    <Property Name="User" Type="System.String">VSPHERE.LOCAL\Administrator</Property>
+    <Property Name="Uid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/</Property>
+    <Property Name="Version" Type="System.String">7.0.3</Property>
+    <Property Name="Build" Type="System.String">19234570</Property>
+    <Property Name="ProductLine" Type="System.String">vpx</Property>
+    <Property Name="InstanceUuid" Type="System.String">fb654aae-77d8-4c1b-b6fc-6f90e7493794</Property>
+    <Property Name="RefCount" Type="System.Int32">9</Property>
+    <Property Name="ExtensionData" Type="VMware.Vim.ServiceInstance">
+      <Property Type="System.String">VMware.Vim.ServiceInstance</Property>
+    </Property>
+  </Object>
+</Objects>

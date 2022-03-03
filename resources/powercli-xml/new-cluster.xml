@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.ClusterImpl">
+    <Property Name="VsanEnabled" Type="System.Boolean">False</Property>
+    <Property Name="VsanDiskClaimMode" Type="VMware.VimAutomation.ViCore.Types.V1.Vsan.VsanDiskClaimMode">Manual</Property>
+    <Property Name="HATotalSlots" Type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="HAUsedSlots" Type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="HAAvailableSlots" Type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="HASlotCpuMHz" Type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="HASlotMemoryMb" Type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="HASlotMemoryGB" Type="System.Nullable`1[[System.Decimal, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="HASlotNumVCpus" Type="System.Nullable`1[[System.Int32, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]" />
+    <Property Name="ParentId" Type="System.String">Folder-group-h29</Property>
+    <Property Name="ParentFolder" Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.FolderImpl">host</Property>
+    <Property Name="HAEnabled" Type="System.Boolean">False</Property>
+    <Property Name="HAAdmissionControlEnabled" Type="System.Boolean">False</Property>
+    <Property Name="HAFailoverLevel" Type="System.Int32">1</Property>
+    <Property Name="HARestartPriority" Type="VMware.VimAutomation.ViCore.Types.V1.Cluster.HARestartPriority">Medium</Property>
+    <Property Name="HAIsolationResponse" Type="VMware.VimAutomation.ViCore.Types.V1.Cluster.HAIsolationResponse">DoNothing</Property>
+    <Property Name="VMSwapfilePolicy" Type="VMware.VimAutomation.ViCore.Types.V1.VMSwapfilePolicy">WithVM</Property>
+    <Property Name="DrsEnabled" Type="System.Boolean">False</Property>
+    <Property Name="DrsMode" Type="VMware.VimAutomation.ViCore.Types.V1.Cluster.DrsMode">FullyAutomated</Property>
+    <Property Name="DrsAutomationLevel" Type="VMware.VimAutomation.ViCore.Types.V1.Cluster.DrsAutomationLevel">FullyAutomated</Property>
+    <Property Name="EVCMode" Type="System.String" />
+    <Property Name="CryptoMode" Type="System.Nullable`1[[VMware.VimAutomation.ViCore.Types.V1.Security.CryptoMode, VMware.VimAutomation.ViCore.Types, Version=12.5.0.4426, Culture=neutral, PublicKeyToken=null]]" />
+    <Property Name="CollectiveHostManagementEnabled" Type="System.Boolean">False</Property>
+    <Property Name="BaseImage" Type="VMware.VimAutomation.ViCore.Types.V1.Lcm.BaseImage" />
+    <Property Name="VendorAddOn" Type="VMware.VimAutomation.ViCore.Types.V1.Lcm.AddOn" />
+    <Property Name="Components" Type="VMware.VimAutomation.ViCore.Types.V1.Lcm.Component[]" />
+    <Property Name="DepotOverrides" Type="System.Uri[]" />
+    <Property Name="Name" Type="System.String">mycluster</Property>
+    <Property Name="CustomFields" Type="VMware.VimAutomation.ViCore.Impl.V1.Util.ReadOnlyDictionary`2[System.String,System.String]">
+      <Property Type="System.Collections.Generic.KeyValuePair`2[System.String,System.String]">[com.vmware.vcenter.cluster.edrs.upgradeHostAdded, ]</Property>
+    </Property>
+    <Property Name="ExtensionData" Type="VMware.Vim.ClusterComputeResource">VMware.Vim.ClusterComputeResource</Property>
+    <Property Name="Id" Type="System.String">ClusterComputeResource-domain-c49</Property>
+    <Property Name="Uid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/Cluster=ClusterComputeResource-domain-c49/</Property>
+  </Object>
+</Objects>

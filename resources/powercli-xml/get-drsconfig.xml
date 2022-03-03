@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.Vim.ClusterDrsConfigInfo">
+    <Property Name="Enabled" Type="System.Boolean">True</Property>
+    <Property Name="EnableVmBehaviorOverrides" Type="System.Boolean">True</Property>
+    <Property Name="DefaultVmBehavior" Type="VMware.Vim.DrsBehavior">fullyAutomated</Property>
+    <Property Name="VmotionRate" Type="System.Int32">3</Property>
+    <Property Name="ScaleDescendantsShares" Type="System.String">disabled</Property>
+    <Property Name="Option" Type="VMware.Vim.OptionValue[]" />
+  </Object>
+</Objects>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.VimAutomation.ViCore.Impl.V1.Cluster.DrsVMAffinityRuleImpl">
+    <Property Name="KeepTogether" Type="System.Boolean">True</Property>
+    <Property Name="VMIds" Type="System.String[]">
+      <Property Type="System.String">VirtualMachine-vm-69</Property>
+      <Property Type="System.String">VirtualMachine-vm-71</Property>
+      <Property Type="System.String">VirtualMachine-vm-73</Property>
+    </Property>
+    <Property Name="Key" Type="System.Int32">3</Property>
+    <Property Name="Uid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/Cluster=ClusterComputeResource-domain-c57/DrsVMAffinityRule=3/</Property>
+    <Property Name="Cluster" Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.ClusterImpl">mycluster</Property>
+    <Property Name="ClusterId" Type="System.String">ClusterComputeResource-domain-c57</Property>
+    <Property Name="ClusterUid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/Cluster=ClusterComputeResource-domain-c57/</Property>
+    <Property Name="Name" Type="System.String">vmhostrule1</Property>
+    <Property Name="Enabled" Type="System.Boolean">True</Property>
+    <Property Name="Mandatory" Type="System.Boolean">False</Property>
+    <Property Name="Type" Type="VMware.VimAutomation.ViCore.Types.V1.Cluster.ResourceSchedulingRuleType">VMAffinity</Property>
+    <Property Name="ExtensionData" Type="VMware.Vim.ClusterAffinityRuleSpec">VMware.Vim.ClusterAffinityRuleSpec</Property>
+  </Object>
+</Objects>

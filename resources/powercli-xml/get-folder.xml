@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.FolderImpl">
+    <Property Name="ParentId" Type="System.String" />
+    <Property Name="Parent" Type="VMware.VimAutomation.ViCore.Types.V1.Inventory.InventoryItem" />
+    <Property Name="IsChildTypeVm" Type="System.Boolean">False</Property>
+    <Property Name="IsChildTypeComputeResource" Type="System.Boolean">False</Property>
+    <Property Name="IsChildTypeDatacenter" Type="System.Boolean">True</Property>
+    <Property Name="IsChildTypeDatastore" Type="System.Boolean">False</Property>
+    <Property Name="Type" Type="VMware.VimAutomation.ViCore.Types.V1.Inventory.FolderType">Datacenter</Property>
+    <Property Name="Name" Type="System.String">Datacenters</Property>
+    <Property Name="CustomFields" Type="VMware.VimAutomation.ViCore.Impl.V1.Util.ReadOnlyDictionary`2[System.String,System.String]" />
+    <Property Name="ExtensionData" Type="VMware.Vim.Folder">VMware.Vim.Folder</Property>
+    <Property Name="Id" Type="System.String">Folder-group-d1</Property>
+    <Property Name="Uid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/Folder=Folder-group-d1/</Property>
+  </Object>
+</Objects>
