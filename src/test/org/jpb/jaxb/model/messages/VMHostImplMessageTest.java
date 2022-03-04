@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.jpb.jaxb.model.Property;
 import org.jpb.jaxb.model.PropertyArrayProperty;
+import org.jpb.jaxb.model.PropertyOfProperties;
 import org.jpb.jaxb.unmarshall.AddVmhostUnmarshaller;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -68,22 +69,23 @@ public final static String INPUT_FILE = "C:\\Users\\robert\\Documents\\powercli-
 
   @Test
   public void getDatastoreIdListTest() {
-      List<Object> datastoreIdList = vmHostImpl.getDatastoreIdList();
+      PropertyArrayProperty datastoreIdList = vmHostImpl.getDatastoreIdList();
       assert(datastoreIdList != null);
-      assert(datastoreIdList.size() == 9);
+      assert(datastoreIdList.getProperties().size() == 4);
       int i = 0;
-      for(Object datastore : datastoreIdList) {
-          if(i == 1) {
-              assert(((org.jpb.jaxb.schema.powercli.Property)datastore).getContent().get(0).equals("Datastore-datastore-62"));
+      for(PropertyOfProperties datastore : datastoreIdList.getProperties()) {
+          String val = (String) datastore.getValues().get(0);
+          if(i == 0) {
+              assert(val.equals("Datastore-datastore-62"));
+          }
+          else if(i == 1) {
+              assert(val.equals("Datastore-datastore-63"));
+          }
+          else if(i == 2) {
+              assert(val.equals("Datastore-datastore-64"));
           }
           else if(i == 3) {
-              assert(((org.jpb.jaxb.schema.powercli.Property)datastore).getContent().get(0).equals("Datastore-datastore-63"));
-          }
-          else if(i == 5) {
-              assert(((org.jpb.jaxb.schema.powercli.Property)datastore).getContent().get(0).equals("Datastore-datastore-64"));
-          }
-          else if(i == 7) {
-              assert(((org.jpb.jaxb.schema.powercli.Property)datastore).getContent().get(0).equals("Datastore-datastore-65"));
+              assert(val.equals("Datastore-datastore-65"));
           }
           i++;
       }
@@ -216,7 +218,7 @@ public final static String INPUT_FILE = "C:\\Users\\robert\\Documents\\powercli-
 
   @Test
   public void getvMSwapFilePolicyTest() {
-      assert(vmHostImpl.getvMSwapFilePolicy().equals("Inherit"));
+      assert(vmHostImpl.getVmSwapFilePolicy().equals("Inherit"));
   }
 
   @Test
@@ -226,7 +228,7 @@ public final static String INPUT_FILE = "C:\\Users\\robert\\Documents\\powercli-
 
   @Test
   public void getvMSwapfileDatastoreIdTest() {
-      assert(vmHostImpl.getvMSwapfileDatastoreId().equals(""));
+      assert(vmHostImpl.getVmSwapfileDatastoreId().equals(""));
   }
 
   @Test
