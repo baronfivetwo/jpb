@@ -1,0 +1,190 @@
+<%@ jet package="org.jpb.jet.generated" imports="java.util.* org.jpb.jaxb.model.*" class="PowerCliMessageTemplate" %>
+<%
+PropertyArrayProperty message = (PropertyArrayProperty) argument;
+String powerCliClass = message.getType();
+String className = powerCliClass.substring(powerCliClass.lastIndexOf(".") + 1, powerCliClass.length());
+ %>
+package org.jpb.jaxb.model.messages;
+
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import org.jpb.jaxb.model.PropertyArrayProperty;
+import org.jpb.jaxb.model.PropertyOfProperties;
+import org.jpb.jaxb.model.messages.exceptions.UnknownFieldException;
+
+/**
+ * This class provides a user friendly way to parse a <%=className%> PowerCLI message
+ *
+ */
+public class <%=className%>Message extends ResponseMessage {
+
+<%for(PropertyOfProperties field : message.getProperties()) {
+    String psType = field.getType();%>
+    private <%=Helper.getJavaDataType(field)%> <%=Helper.toCamelCase(field.getName())%>;
+<%}%>
+    private PropertyArrayProperty message;
+    
+    // Fields for this message
+    enum Field {
+    <%for(PropertyOfProperties field : message.getProperties()) {%>
+        FIELD<%=Helper.toCobolCase(field.getName())%>("<%=field.getName()%>"),
+    <%}%>
+        UNKNOWN("UNKNOWN");
+        
+        String name;
+        private static final Map<String, Field> LOOKUP = 
+            Arrays.stream(Field.values()).collect(Collectors.toMap(Field::getName, Function.identity()));
+        
+        /**
+         * Sets the name value for this enum
+         * @param name String to be set for name
+         */
+        Field(String name) {
+            this.name = name;
+        }
+        
+        /**
+         * Gets the name value for this enum
+         * @return string value for this enum
+         */
+        public String getName() {
+            return this.name;
+        }
+        
+        /**
+         * Provides reverse lookup of name to ordinal
+         * @param name Name to find
+         * @return Field ordinal with the specified name
+         */
+        public static Field fromName(String name) {
+            Field field = LOOKUP.get(name);
+            if(field == null) {
+                field = Field.UNKNOWN;
+            }
+            return field;
+        }
+    }
+    
+    // Message type assigned for this message
+    public final static String MESSAGE_CLASS = "<%=powerCliClass%>";
+    
+    /**
+     * Constructor that accepts a message in the form of a PropertyArrayProperty
+     * @param message PropertyArrayProperty to be used to construct this message
+     * @throws UnknownFieldException
+     */
+    public VMHostImplMessage(PropertyArrayProperty message) throws UnknownFieldException {
+        this.message = message;
+        build();
+    }
+    
+    /**
+     * method used by constructor to build the message
+     * @throws UnknownFieldException
+     */
+    private void build() throws UnknownFieldException {
+        for(PropertyOfProperties property : message.getProperties()) {
+            Field field = Field.fromName(property.getName());
+            
+            switch(field) {
+            <%for(PropertyOfProperties field : message.getProperties()) {%>
+                case FIELD<%=Helper.toCobolCase(field.getName())%>:
+                <%if(Helper.getJavaDataType(field).equals("String")) {%>
+                    this.<%=Helper.toCamelCase(field.getName())%> = convert(property.getValues());
+                    break;
+                <%}
+                  else if(Helper.getJavaDataType(field).equals("Integer")) {%>
+                    if(property.getValues() == null || property.getValues().size() == 0) {
+                        this.<%=Helper.toCamelCase(field.getName())%> = 0;
+                    }
+                    else {
+                        this.<%=Helper.toCamelCase(field.getName())%> = Integer.parseInt((String)property.getValues().get(0));
+                    }
+                    break;
+                <%}
+                  else if(Helper.getJavaDataType(field).equals("Boolean")) {%>
+                    if(property.getValues() == null || property.getValues().size() == 0) {
+                        this.<%=Helper.toCamelCase(field.getName())%> = false;
+                    }
+                    else {
+                        this.<%=Helper.toCamelCase(field.getName())%> = Boolean.parseBoolean((String)property.getValues().get(0));
+                    }
+                    break;
+                <%}
+                  else if(Helper.getJavaDataType(field).equals("Double")) {%>
+                    if(property.getValues() == null || property.getValues().size() == 0) {
+                        this.<%=Helper.toCamelCase(field.getName())%> = 0.0d;
+                    }
+                    else {
+                        this.<%=Helper.toCamelCase(field.getName())%> = Double.parseDouble((String)property.getValues().get(0));
+                    }
+                    break;
+                <%}
+                  else if(Helper.getJavaDataType(field).equals("PropertyArrayProperty")) {%>
+                    this.<%=Helper.toCamelCase(field.getName())%> = new PropertyArrayProperty(
+                        property.getName(), 
+                        property.getType());
+                    this.<%=Helper.toCamelCase(field.getName())%>.setProperties(property.getValues());
+                    break;
+                <%{%>
+              <%}
+            }
+        }%>
+                case UNKNOWN:
+                    throw new UnknownFieldException(MESSAGE_CLASS + ":" + property.getName());
+            }
+        }
+    }
+
+    <%for(PropertyOfProperties field : message.getProperties()) {
+        if(Helper.getJavaDataType(field).equals("String")) {%>
+    /**
+     * Getter for <%=Helper.toCamelCase(field.getName())%>
+     * @return The <%=Helper.toCamelCase(field.getName())%> value of the message
+     */
+    public String get<%=field.getName()%>() {
+        return <%=Helper.toCamelCase(field.getName())%>;
+    }
+      <%}
+        else if(Helper.getJavaDataType(field).equals("Boolean")) {%>
+    /**
+     * Getter for the <%=Helper.toCamelCase(field.getName())%> flag
+     * @return The <%=Helper.toCamelCase(field.getName())%> flag of the message
+     */
+    public Boolean is<%=field.getName()%>() {
+        return <%=Helper.toCamelCase(field.getName())%>;
+    }
+      <%}
+        else if(Helper.getJavaDataType(field).equals("Integer")) {%>
+    /**
+     * Getter for <%=Helper.toCamelCase(field.getName())%> 
+     * @return The <%=Helper.toCamelCase(field.getName())%> value of the message
+     */
+    public Integer get<%=field.getName()%>() {
+        return <%=Helper.toCamelCase(field.getName())%>;
+    }
+      <%}
+        else if(Helper.getJavaDataType(field).equals("Double")) {%>
+    /**
+     * Getter for <%=Helper.toCamelCase(field.getName())%>
+     * @return The <%=Helper.toCamelCase(field.getName())%> value of the message
+     */
+    public Double get<%=field.getName()%>() {
+        return <%=Helper.toCamelCase(field.getName())%>;
+    }
+      <%}
+        else if(Helper.getJavaDataType(field).equals("PropertyArrayProperty")) {%>
+    /**
+     * Getter for the <%=Helper.toCamelCase(field.getName())%> array
+     * @return The <%=Helper.toCamelCase(field.getName())%> array of the message
+     */
+    public PropertyArrayProperty get<%=field.getName()%>() {
+        return <%=Helper.toCamelCase(field.getName())%>;
+    }
+      <%}%>
+      
+    <%}%>
+}

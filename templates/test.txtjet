@@ -1,0 +1,10 @@
+<%@ jet package="org.jpb.jet.generated" imports="java.util.*" class="TestTemplate" %>
+
+<% List elementList = (List) argument; %>
+   <?xml version="1.0" encoding="UTF-8"?>
+   <demo>
+   <% for (Iterator i = elementList.iterator(); i.hasNext(); ) { %>
+
+     <element><%=i.next().toString()%></element>
+   <% } %>
+   </demo>

@@ -4,3 +4,4 @@
 .project
 .settings
 /test-output/
+/src/main/org/jpb/jet/generated/
