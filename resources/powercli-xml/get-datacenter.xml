@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.DatacenterImpl">
+    <Property Name="ParentFolderId" Type="System.String">Folder-group-d1</Property>
+    <Property Name="ParentFolder" Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.FolderImpl">Datacenters</Property>
+    <Property Name="Name" Type="System.String">LAB</Property>
+    <Property Name="CustomFields" Type="VMware.VimAutomation.ViCore.Impl.V1.Util.ReadOnlyDictionary`2[System.String,System.String]" />
+    <Property Name="ExtensionData" Type="VMware.Vim.Datacenter">VMware.Vim.Datacenter</Property>
+    <Property Name="Id" Type="System.String">Datacenter-datacenter-27</Property>
+    <Property Name="Uid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/Datacenter=Datacenter-datacenter-27/</Property>
+    <Property Name="DatastoreFolderId" Type="System.String">Folder-group-s30</Property>
+  </Object>
+</Objects>

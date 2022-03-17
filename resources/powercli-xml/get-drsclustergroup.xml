@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Objects>
+  <Object Type="VMware.VimAutomation.ViCore.Impl.V1.Cluster.DrsClusterVMGroupImpl">
+    <Property Name="Member" Type="VMware.VimAutomation.ViCore.Interop.V1.Inventory.VirtualMachineInterop[]">
+      <Property Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.VirtualMachineImpl">vcsa001</Property>
+    </Property>
+    <Property Name="Name" Type="System.String">newvmgroup1</Property>
+    <Property Name="GroupType" Type="VMware.VimAutomation.ViCore.Types.V1.Cluster.DrsClusterGroupType">VMGroup</Property>
+    <Property Name="ExtensionData" Type="VMware.Vim.ClusterVmGroup">VMware.Vim.ClusterVmGroup</Property>
+    <Property Name="Uid" Type="System.String">/VIServer=vsphere.local\administrator@192.168.86.204:443/DrsClusterGroup=ClusterComputeResource-domain-c57:newvmgroup1/</Property>
+    <Property Name="Cluster" Type="VMware.VimAutomation.ViCore.Impl.V1.Inventory.ClusterImpl">mycluster</Property>
+  </Object>
+</Objects>
