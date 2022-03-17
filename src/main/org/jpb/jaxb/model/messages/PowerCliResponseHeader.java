@@ -25,6 +25,7 @@ public class PowerCliResponseHeader {
     
     private final static Logger LOGGER = Logger.getLogger("PowerCliResponseHeader");
     
+    @SuppressWarnings("incomplete-switch")
     public PowerCliResponseHeader(Map<String, org.jpb.jaxb.model.Property> message) throws UnknownMessageException {
         
         if(message.get(FIELD_ID) instanceof StringProperty) {

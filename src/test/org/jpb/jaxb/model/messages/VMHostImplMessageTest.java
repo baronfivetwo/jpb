@@ -1,6 +1,5 @@
 package org.jpb.jaxb.model.messages;
 
-import java.util.List;
 import java.util.Map;
 
 import org.jpb.jaxb.model.Property;
@@ -113,7 +112,7 @@ public final static String INPUT_FILE = "C:\\Users\\robert\\Documents\\powercli-
 
   @Test
   public void getIsStandaloneTest() {
-      assert(vmHostImpl.isStandalone() == false);
+      assert(vmHostImpl.isIsStandalone() == false);
   }
 
   @Test
@@ -128,7 +127,7 @@ public final static String INPUT_FILE = "C:\\Users\\robert\\Documents\\powercli-
 
   @Test
   public void getMaxEvcModeTest() {
-      assert(vmHostImpl.getMaxEvcMode().equals("intel-broadwell"));
+      assert(vmHostImpl.getMaxEVCMode().equals("intel-broadwell"));
   }
 
   @Test
@@ -218,17 +217,17 @@ public final static String INPUT_FILE = "C:\\Users\\robert\\Documents\\powercli-
 
   @Test
   public void getvMSwapFilePolicyTest() {
-      assert(vmHostImpl.getVmSwapFilePolicy().equals("Inherit"));
+      assert(vmHostImpl.getVMSwapfilePolicy().equals("Inherit"));
   }
 
   @Test
   public void getvMSwapfileDatastoreTest() {
-      assert(vmHostImpl.getvMSwapfileDatastore().equals(""));
+      assert(vmHostImpl.getVMSwapfileDatastore().equals(""));
   }
 
   @Test
   public void getvMSwapfileDatastoreIdTest() {
-      assert(vmHostImpl.getVmSwapfileDatastoreId().equals(""));
+      assert(vmHostImpl.getVMSwapfileDatastoreId().equals(""));
   }
 
   @Test
